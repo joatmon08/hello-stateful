@@ -19,7 +19,7 @@ jobs:
       - run: 
           name: Build the runner
           command: |
-            docker build $LIBRARY/$CONTAINER_NAME:latest .
+            docker build -t $LIBRARY/$CONTAINER_NAME:latest .
             docker tag $LIBRARY/$CONTAINER_NAME:latest $LIBRARY/$CONTAINER_NAME:$VERSION.$CIRCLE_BUILD_NUM
       - run:
           name: Push the image to Docker Hub
